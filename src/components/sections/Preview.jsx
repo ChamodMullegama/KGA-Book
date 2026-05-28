@@ -22,12 +22,12 @@ const Preview = () => {
   return (
     <section
       id="preview"
-      className="py-24 bg-black relative select-none border-t border-zinc-900 overflow-hidden"
+      className="relative py-24 overflow-hidden bg-black border-t select-none border-zinc-900"
     >
       {/* Background Red Glow */}
       <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-blood/10 blur-3xl -z-10" />
 
-      <div className="max-w-7xl px-6 mx-auto">
+      <div className="px-6 mx-auto max-w-7xl">
         <div className="grid items-center gap-16 lg:grid-cols-12">
           {/* Left Column - Book Image */}
           <motion.div
@@ -35,18 +35,18 @@ const Preview = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
-            className="lg:col-span-5 flex justify-center items-center py-6"
+            className="flex items-center justify-center py-6 lg:col-span-5"
           >
             <div className="relative group">
               <img
-                src="https://picsum.photos/id/1015/600/800"
+                src="./src/assets/bookcover.png"
                 alt="Book Preview"
-                className="w-full max-w-[380px] rounded-2xl shadow-2xl border border-white/10 transition-transform duration-500 group-hover:scale-105"
+                className="duration-500 border shadow-2xl ansition-transform w border-white/10 group-hover:scale-105"
               />
               <div className="absolute -inset-6 bg-blood/20 blur-3xl -z-10 rounded-3xl" />
 
-              <div className="absolute -top-4 -right-4 bg-black border border-blood text-blood text-xs font-bold tracking-widest px-5 py-2 rounded-full">
-                SAMPLE
+              <div className="absolute px-5 py-2 text-xs font-bold tracking-widest bg-black border rounded-full -top-4 -right-4 border-blood text-blood">
+                SAMPLE 
               </div>
             </div>
           </motion.div>
@@ -57,40 +57,40 @@ const Preview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-7 flex flex-col justify-center"
+            className="flex flex-col justify-center lg:col-span-7"
           >
             {/* Header Title - Smaller */}
-            <h2 className="leading-tight mb-6">
-              <span className="block text-white font-heading text-3xl md:text-5xl tracking-widest">
+            <h2 className="mb-6 leading-tight">
+              <span className="block text-3xl tracking-widest text-white font-heading md:text-5xl">
                 OPEN THE BOOK.
               </span>
-              <span className="block text-blood font-heading text-4xl md:text-6xl tracking-tighter font-bold text-glow mt-1">
+              <span className="block mt-1 text-4xl font-bold tracking-tighter text-blood font-heading md:text-6xl text-glow">
                 READ THE FIRST CUT.
               </span>
             </h2>
 
             {/* Subtitle - Smaller */}
-            <p className="text-zinc-400 font-body text-base md:text-lg leading-relaxed max-w-xl mb-10">
+            <p className="max-w-xl mb-10 text-base leading-relaxed text-zinc-400 font-body md:text-lg">
               First taste of the writing — get inside the first chapter, feel
               the rhythm of the text, and understand exactly why this book hits
               so hard.
             </p>
 
             {/* Chapter Previews - Smaller Text */}
-            <div className="space-y-6 mb-10">
+            <div className="mb-10 space-y-6">
               {previews.map((prev, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-4 pb-6 border-b border-zinc-900 last:border-b-0"
                 >
-                  <div className="text-xl font-heading text-blood font-bold tracking-widest pt-1 shrink-0">
+                  <div className="pt-1 text-xl font-bold tracking-widest font-heading text-blood shrink-0">
                     {prev.num}
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-heading tracking-wider text-white mb-2">
+                    <h3 className="mb-2 text-lg tracking-wider text-white md:text-xl font-heading">
                       {prev.title}
                     </h3>
-                    <p className="text-sm md:text-base font-body text-zinc-500 leading-relaxed">
+                    <p className="text-sm leading-relaxed md:text-base font-body text-zinc-500">
                       {prev.desc}
                     </p>
                   </div>
@@ -101,7 +101,7 @@ const Preview = () => {
             {/* CTA Button */}
             <a
               href="#buy"
-              className="w-full sm:w-fit text-center px-10 py-5 text-lg font-heading tracking-widest bg-blood hover:bg-red-700 text-white transition-all duration-300 rounded-xl"
+              className="w-full px-10 py-5 text-lg tracking-widest text-center text-white transition-all duration-300 sm:w-fit font-heading bg-blood hover:bg-red-700 rounded-xl"
             >
               READ SAMPLE CHAPTER
             </a>
